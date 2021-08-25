@@ -68,8 +68,16 @@ export const QuestionStyle = styled.div`
         stroke: #737388;
         transition: var(--transition);
 
-        &:hover {
-          filter: brightness(0.75);
+        &--purple {
+          &:hover {
+            stroke: var(--primary);
+          }
+        }
+
+        &--red {
+          &:hover {
+            stroke: var(--red);
+          }
         }
 
         &.liked {

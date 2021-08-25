@@ -14,7 +14,6 @@ export const Container = styled.div`
   section {
     flex: 1;
 
-
     @media (min-width: 720px) {
       display: grid;
       align-content: center;

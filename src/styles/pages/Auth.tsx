@@ -2,8 +2,13 @@ import styled from 'styled-components';
 
 export const Auth = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: stretch;
-  height: 100vh;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+    height: 100vh;
+  }
 
   .aside {
     flex: 2;
@@ -15,17 +20,33 @@ export const Auth = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 8rem 5rem;
+    padding: 4rem 1rem;
+
+    @media (min-width: 1280px) {
+      padding: 8rem 5rem;
+    }
+
+    @media (min-width: 720px) and (max-width: 1279px) {
+      padding: 6rem 3rem;
+    }
 
     img {
       margin-bottom: 0.5rem;
-      max-width: 320px;
+      max-width: 50%;
+
+      @media (min-width: 720px) {
+        max-width: 320px;
+      }
     }
 
     strong {
-      font: 700 2.25rem 'Poppins', sans-serif;
-      line-height: 2.75rem;
+      font: 700 2rem 'Poppins', sans-serif;
+      line-height: 1.2;
       margin-bottom: 1rem;
+
+      @media (min-width: 1280px) {
+        font-size: 2.25rem;
+      }
     }
 
     p {
@@ -39,11 +60,15 @@ export const Auth = styled.div`
   .main {
     flex: 3;
 
-    padding: 0 2rem;
+    padding: 2rem 1rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 720px) {
+      padding: 0 2rem;
+    }
 
     &__content {
       display: flex;
@@ -63,7 +88,7 @@ export const Auth = styled.div`
         margin-top: 1rem;
 
         > a {
-          color: #E559F9;
+          color: var(--pink);
           text-decoration: underline;
         }
       }
@@ -72,11 +97,15 @@ export const Auth = styled.div`
     &-form {
       &__input {
         background-color: var(--white);
-        border: 1px solid #a8a8b3;
+        border: 1px solid var(--separator-color);
         border-radius: 8px;
         margin-bottom: 1rem;
         padding: 1rem 1rem;
         width: 100%;
+
+        &::placeholder {
+          color: var(--separator-color);
+        }
       }
     }
 
@@ -88,7 +117,7 @@ export const Auth = styled.div`
 
   .separator {
     font-size: 14px;
-    color: #a8a8b3;
+    color: var(--separator-color);
     margin: 32px 0;
     display: flex;
     align-items: center;
@@ -97,7 +126,7 @@ export const Auth = styled.div`
       content: "";
       flex: 1;
       height: 1px;
-      background-color: #a8a8b3;
+      background-color: var(--separator-color);
       margin-left: 1rem;
     }
 
@@ -105,7 +134,7 @@ export const Auth = styled.div`
       content: "";
       flex: 1;
       height: 1px;
-      background-color: #a8a8b3;
+      background-color: var(--separator-color);
       margin-right: 1rem;
     }
   }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RoomStyle = styled.div`
   .header {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     border-bottom: 1px solid #e2e2e2;
 
     &__content {
@@ -10,7 +10,12 @@ export const RoomStyle = styled.div`
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @media (min-width: 768px) {
+        align-items: center;
+      }
     }
 
     &__img {
@@ -20,7 +25,13 @@ export const RoomStyle = styled.div`
     &__column {
       display: flex;
       align-items: center;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 0.5rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
 
       .btn {
         height: 40px;
@@ -31,27 +42,49 @@ export const RoomStyle = styled.div`
   .content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 
-    &__room-title-wrapper {
-      margin: 2rem 0 1.5rem;
-      display: flex;
-      align-items: center;
+    @media (min-width: 1024px) {
+      padding: 0;
     }
 
-    &__room-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      color: #29292e;
-    }
+    &__room {
+      &-title-wrapper {
+        margin: 2rem 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    &__room-tag {
-      margin-left: 1rem;
-      background-color: #e559f9;
-      border-radius: 2rem;
-      padding: 0.5rem 1rem;
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 500;
+        @media (min-width: 768px) {
+          justify-content: initial;
+        }
+      }
+
+      &-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.25rem;
+        color: #29292e;
+
+        @media (min-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &-tag {
+        margin-left: 1rem;
+        background-color: var(--pink);
+        border-radius: 2rem;
+        padding: 0.5rem 1rem;
+        color: var(--white);
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      }
+
     }
   }
 
@@ -72,6 +105,7 @@ export const RoomStyle = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
 
       .user-info {
         display: flex;

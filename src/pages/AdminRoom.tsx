@@ -1,14 +1,14 @@
 import { useHistory, useParams } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
-import deleteImg from '../assets/images/delete.svg';
-import checkImg from '../assets/images/check.svg';
-import answerImg from '../assets/images/answer.svg';
 import { RoomCode } from '../components/RoomCode';
 import { RoomStyle } from '../styles/pages/Room';
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
 import { Button } from '../components/Button';
 import { database } from '../services/firebase';
+import { ReactComponent as CheckImg } from '../assets/images/check.svg';
+import { ReactComponent as DeleteImg } from '../assets/images/delete.svg';
+import { ReactComponent as AnswerImg } from '../assets/images/answer.svg';
 
 type RoomParams = {
   id: string
@@ -80,18 +80,18 @@ export function AdminRoom() {
 
                 {!question.isAnswered && (
                   <>
-                    <button className="like__btn" type="button" onClick={() => handleCheckQuestionAsAnswered(question.id)}>
-                      <img src={checkImg} alt="Marcar pergunta como respondida" title="Marcar pergunta como respondida" />
+                    <button className="like__btn like__btn--delete" type="button" onClick={() => handleCheckQuestionAsAnswered(question.id)}>
+                      <CheckImg title="Marcar pergunta como respondida" />
                     </button>
 
-                    <button className="like__btn" type="button" onClick={() => handleHighlightQuestion(question.id)}>
-                      <img src={answerImg} alt="Dar destaque à pergunta" title="Dar destaque à pergunta" />
+                    <button className="like__btn like__btn--purple" type="button" onClick={() => handleHighlightQuestion(question.id)}>
+                      <AnswerImg title="Dar destaque à pergunta" />
                     </button>
                   </>
                 )}
 
-                <button className="like__btn" type="button" onClick={() => handleDeleteQuestion(question.id)}>
-                  <img src={deleteImg} alt="Remover pergunta" title="Remover pergunta" />
+                <button className="like__btn like__btn--red" type="button" onClick={() => handleDeleteQuestion(question.id)}>
+                  <DeleteImg title="Remover pergunta" />
                 </button>
               </Question>
             )

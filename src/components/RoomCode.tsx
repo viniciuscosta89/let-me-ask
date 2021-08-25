@@ -13,7 +13,7 @@ export function RoomCode(props: RoomCodeProps) {
   return (
     <RoomCodeStyle className="room-code" onClick={copyRoomCodeToClipboard}>
       <div>
-        <img src={copyImg} alt="" />
+        <img className="room-code__icon" src={copyImg} alt="" />
       </div>
       <span>
         Sala #{props.code}

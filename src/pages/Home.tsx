@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom'
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
+import loginImg from '../assets/images/log-in.svg'
 import { Auth } from '../styles/pages/Auth';
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
@@ -72,7 +73,10 @@ export function Home() {
               type="submit"
               variant="primary"
             >
-              Entrar na sala
+              <img src={loginImg} alt="Google Logo" />
+              <span>
+                Entrar na sala
+              </span>
             </Button>
           </form>
         </div>
